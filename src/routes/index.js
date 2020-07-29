@@ -5,6 +5,6 @@ const routes = Router()
 
 routes.get('/urls', urlController.findAll)
 
-routes.get('/shortUrl', urlController.shortUrl)
+routes.post('/shortUrl', urlController.shortUrl)
 
 module.exports = routes
