@@ -23,7 +23,7 @@
     "express": "^4.17.1",
     "mysql2": "^2.1.0",
     "sequelize": "^6.3.3",
-    "tinyurl": "^1.1.6"
+    "shortid": "^2.2.15"
   },
   "devDependencies": {
     "nodemon": "^2.0.4",

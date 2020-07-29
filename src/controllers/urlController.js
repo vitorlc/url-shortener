@@ -1,5 +1,5 @@
 
-const TinyURL = require('tinyurl')
+const ShortId = require('shortid')
 const db = require('../models')
 const Urls = db.urls
 
@@ -16,11 +16,9 @@ module.exports = {
 
     async shortUrl(req, res) {
         try {
-
-            let shortenedUrl = await TinyURL.shorten(req.body.url)
             const url = await Urls.create({
                 original: req.body.url,
-                shortUrl: shortenedUrl,
+                shortUrl: ShortId.generate(),
                 clicks: 0
             })
             return res.status(200).send(url)
