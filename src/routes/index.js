@@ -7,4 +7,6 @@ routes.get('/urls', urlController.findAll)
 
 routes.post('/shortUrl', urlController.shortUrl)
 
+routes.get('/:shortUrl', urlController.redirectUrl)
+
 module.exports = routes
