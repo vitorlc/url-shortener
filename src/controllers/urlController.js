@@ -17,9 +17,10 @@ module.exports = {
 
     async shortUrl(req, res) {
         try {
+            const host = req.get('host')
             const url = await Urls.create({
                 original: req.body.url,
-                shortUrl: ShortId.generate(),
+                shortUrl: host + '/' + ShortId.generate(),
                 clicks: 0
             })
             return res.status(200).send(url)
@@ -31,14 +32,16 @@ module.exports = {
 
     async redirectUrl(req, res) {
         try {
+            const host = req.get('host')
             const url = await Urls.findOne({
                 where : {
-                    shortUrl: req.params.shortUrl
+                    shortUrl: host + '/' + req.params.shortUrl
                 } 
             })
+            if (url == null) return res.status(404).send({msg: 'Url não encontrada'})
             url.clicks+=1
             url.save()
-            res.redirect(url.original)
+            return res.redirect(url.original)
         } catch(e) {
             console.log(e)
             return res.status(500).send({error: true, msg: "Não foi possível redirecionar para essa url"})
