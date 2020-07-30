@@ -25,7 +25,6 @@ describe('List Urls', () => {
     it('should list all urls', async() => {
         const response = await request(app)
             .get('/urls')
-        console.log("response", response)
             
         expect(response.status).toBe(200)
     })
