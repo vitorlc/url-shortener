@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-br">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <title>URL Shortener</title>
+    </head>
+
+    <body style="display: flex; -webkit-box-align: center; align-items: center; justify-content: center; padding-top: 50px; padding-bottom: 50px; background-color: #f5f5f5;">
+            <div class="container">
+
+                <form action="/shortUrl" method="POST">
+                    <h1 class="h3 mb-3 font-weight-normal" >URL Shortener</h1>
+                    <p> Public test API Url Shortener</p>
+                    <input type="text" class="form-control" id="InputUrl1" placeholder="Enter URL" name="url" autofocus>
+                    <br>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" > Get Short Url</button>
+                </form>
+                <br>
+                
+                <form action="/urls" method="GET">
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" >List All</button>
+                        
+                    </div>
+                </form>
+            </div>
+                
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+    </body>
+
+</html>
